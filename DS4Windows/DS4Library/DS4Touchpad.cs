@@ -57,8 +57,7 @@ namespace DS4Windows
         public event EventHandler<EventArgs> TouchUnchanged = null; // no status change for the touchpad itself... but other sensors may have changed, or you may just want to do some processing
 
         public readonly static int TOUCHPAD_DATA_OFFSET = 35;
-        internal int lastTouchPadX1, lastTouchPadY1,
-            lastTouchPadX2, lastTouchPadY2; // tracks 0, 1 or 2 touches; we maintain touch 1 and 2 separately
+        public int lastTouchPadX1 = 0, lastTouchPadY1 = 0, lastTouchPadX2 = 0, lastTouchPadY2 = 0; // tracks 0, 1 or 2 touches; we maintain touch 1 and 2 separately
         internal bool lastTouchPadIsDown;
         internal bool lastIsActive1, lastIsActive2;
         internal byte lastTouchID1, lastTouchID2;

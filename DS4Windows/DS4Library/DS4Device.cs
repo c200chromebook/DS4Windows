@@ -491,6 +491,8 @@ namespace DS4Windows
                         cState.TouchRight = (inputReport[1 + DS4Touchpad.TOUCHPAD_DATA_OFFSET + touchOffset] + ((inputReport[2 + DS4Touchpad.TOUCHPAD_DATA_OFFSET + touchOffset] & 0xF) * 255) < 1920 * 2 / 5) ? false : true;
                         // Even when idling there is still a touch packet indicating no touch 1 or 2
                         touchpad.handleTouchpad(inputReport, cState, touchOffset);
+                        cState.LTX = (byte)(touchpad.lastTouchPadX1 / 1920.0 * 256.0);
+                        cState.LTY = (byte)(touchpad.lastTouchPadY1 / 960.0 * 256.0);
                     }
                 }
                 catch { currerror = "Index out of bounds: touchpad"; }

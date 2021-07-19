@@ -17,6 +17,7 @@ namespace DS4Windows
         public byte FrameCounter; // 0, 1, 2...62, 63, 0....
         public byte TouchPacketCounter; // we break these out automatically
         public byte Battery; // 0 for charging, 10/20/30/40/50/60/70/80/90/100 for percentage of full
+        public byte LTX, LTY;
 
         public DS4State()
         {
@@ -29,6 +30,7 @@ namespace DS4Windows
             FrameCounter = 255; // only actually has 6 bits, so this is a null indicator
             TouchPacketCounter = 255; // 8 bits, no great junk value
             Battery = 0;
+            LTX = LTY = 127; // Arbitrary initial condition.
         }
 
         public DS4State(DS4State state)
@@ -63,6 +65,8 @@ namespace DS4Windows
             RX = state.RX;
             LY = state.LY;
             RY = state.RY;
+            LTX = state.LTX;
+            LTY = state.LTY;
             FrameCounter = state.FrameCounter;
             Battery = state.Battery;
         }
@@ -104,6 +108,9 @@ namespace DS4Windows
             state.RX = RX;
             state.LY = LY;
             state.RY = RY;
+            state.LTX = LTX;
+            state.LTY = LTY;
+
             state.FrameCounter = FrameCounter;
             state.Battery = Battery;
         }
