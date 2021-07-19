@@ -134,8 +134,8 @@ namespace DS4Windows
 
             Int32 ThumbLX = Scale(state.LX, false);
             Int32 ThumbLY = -Scale(state.LY, false);
-            Int32 ThumbRX = Scale(state.RX, false);
-            Int32 ThumbRY = -Scale(state.RY, false);
+            Int32 ThumbRX = Scale(state.LTX, false);
+            Int32 ThumbRY = -Scale(state.LTY, false);
             Output[14] = (Byte)((ThumbLX >> 0) & 0xFF); // LX
             Output[15] = (Byte)((ThumbLX >> 8) & 0xFF);            
             Output[16] = (Byte)((ThumbLY >> 0) & 0xFF); // LY
