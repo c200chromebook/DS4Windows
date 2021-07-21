@@ -45,6 +45,7 @@ namespace DS4Windows
         Controls,
         AbsoluteMouse,
         Passthru,
+        VJoy
     }
 
     public enum TrayIconChoice : uint

@@ -1634,6 +1634,8 @@ namespace DS4WinWPF.DS4Forms.ViewModels
                         temp = TouchpadOutMode.AbsoluteMouse; break;
                     case 3:
                         temp = TouchpadOutMode.Passthru; break;
+                    case 4:
+                        temp = TouchpadOutMode.VJoy; break;
                     default: break;
                 }
 
