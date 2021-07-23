@@ -126,6 +126,8 @@ namespace DS4Windows
                     // Should never come here but just in case use the NONE case as default handler....
                     goto case SASteeringWheelEmulationAxisType.None;
             }
+            DS4Windows.VJoyFeeder.vJoyFeeder.FeedAxisValue((short)(state.TrackPadTouch0.X / 1920.0 * 32767.0), 1, DS4Windows.VJoyFeeder.HID_USAGES.HID_USAGE_X);
+            DS4Windows.VJoyFeeder.vJoyFeeder.FeedAxisValue((short)(state.TrackPadTouch0.Y / 960.0 * 32767.0), 1, DS4Windows.VJoyFeeder.HID_USAGES.HID_USAGE_Y);
 
             cont.SubmitReport();
         }

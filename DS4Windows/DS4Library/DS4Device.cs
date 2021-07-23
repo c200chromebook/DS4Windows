@@ -508,7 +508,7 @@ namespace DS4Windows
                 btPollRate = value;
             }
         }
-
+        public short Throttle { get { return cState.TrackPadTouch0.X;  } }
         public DS4Touchpad Touchpad { get { return touchpad; } }
         public DS4SixAxis SixAxis { get { return sixAxis; } }
 

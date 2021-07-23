@@ -64,7 +64,15 @@ namespace DS4Windows
                         color = getTransitionedColor(ref lowColor, ref fullColor, device.getBattery());
                     }
                     else
-                        color = lightModeInfo.m_CustomLed; //getCustomColor(deviceNum);
+                    {
+                        
+                        double throttle = device.Throttle / 1920.0;
+                        
+                        // DS4Color throttleColor = new DS4Color((byte)(Max(0, 1.0 - throttle * 2) * 255),
+                        //                                                              (byte)(Max(0, 2.0 * throttle - Max(0, 4.0 * (throttle - 1 / 2.0))) * 255),
+                        //                                                              (byte)(Max(0, 2.0 * throttle - 1) * 255));
+                        color = HuetoRGB((float)(throttle * 300), 255); //getCustomColor(deviceNum);
+                    }
                 }
                 else
                 {
