@@ -126,7 +126,7 @@ namespace DS4Windows.VJoyFeeder
             public struct JoystickState
             {
                 public byte bDevice;
-                public Int32 Throttle;
+                public double Throttle;
                 public Int32 Rudder;
                 public Int32 Aileron;
                 public Int32 AxisX;

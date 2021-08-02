@@ -42,6 +42,8 @@ namespace DS4Windows
             public byte RawTrackingNum;
         }
 
+        public double Throttle { get { return Math.Max(Math.Min(((TrackPadTouch0.X / 1920.0) - 0.05) * 1.1, 1.0), 0.0); } }
+
         public TrackPadTouch TrackPadTouch0;
         public TrackPadTouch TrackPadTouch1;
 
